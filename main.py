@@ -26,6 +26,5 @@ def obtener_token(usuario, clave):
     respuesta = requests.post(url, headers=cabecera, data=json.dumps(body), verify=False)
     token = respuesta.json()["imdata"][0]["aaaLogin"]["attributes"]["token"]
     return token
-#token = obtener_token("admin", "!v3G@!4@Y")
 token = obtener_token(conf.usuario, conf.clave)
 print(token)
